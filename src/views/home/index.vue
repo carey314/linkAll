@@ -1,8 +1,11 @@
 <template>
   <div class="link-all-box">
     <div class="home-page">
+      <div>
+        <router-link to="/" style="text-decoration: none;color: #000;"><el-icon><Menu /></el-icon></router-link>
+      </div>
       <div class="home-user">
-        <router-link to="user" style="text-decoration: none"><el-icon><User /></el-icon></router-link>
+        <router-link to="user" style="text-decoration: none;color: #000;"><el-icon><User /></el-icon></router-link>
       </div>
       <div class="home-logo"><img :src="cat" /></div>
       <div class="home-search">
@@ -29,7 +32,7 @@
 
 <script setup lang="ts">
 import { ref, reactive,nextTick } from "vue";
-import { User, MoreFilled } from "@element-plus/icons-vue";
+import { User, Menu } from "@element-plus/icons-vue";
 import { ElInput } from "element-plus";
 
 import { Search } from "@element-plus/icons-vue";
