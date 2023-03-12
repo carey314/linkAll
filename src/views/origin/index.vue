@@ -1,7 +1,7 @@
 <template>
   <div class="orgin-page">
-    <div>
-      <img :src="WechatIMG" />
+    <div class="logo">
+      <img :src="cat" />
     </div>
     <div class="content">
       <div class="content-title">开始使用👇🏻</div>
@@ -24,7 +24,7 @@
 <script setup lang="ts">
 import { ref, reactive } from "vue";
 
-import WechatIMG from "../../assets/image/WechatIMG.png";
+import cat from "../../assets/image/cat.png";
 </script>
 
 <style scoped lang="scss">
@@ -34,6 +34,13 @@ import WechatIMG from "../../assets/image/WechatIMG.png";
   max-width: 768px;
   max-height: 869px;
   margin: auto;
+  .logo {
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+  }
   .content {
     text-align: center;
     .content-title {

@@ -1,10 +1,10 @@
 <template>
   <div class="link-all-box">
-    <div class="home-page" v-if="showUser">
-      <div class="home-user" @click="toUser">
-        <el-icon><User /></el-icon>
+    <div class="home-page">
+      <div class="home-user">
+        <router-link to="user" style="text-decoration: none"><el-icon><User /></el-icon></router-link>
       </div>
-      <div class="home-logo"><img :src="WechatIMG" /></div>
+      <div class="home-logo"><img :src="cat" /></div>
       <div class="home-search">
         <el-input
           v-model="input1"
@@ -19,52 +19,11 @@
         <el-tag class="ml-2" type="success">育婴师</el-tag>
         <el-tag class="ml-2" type="warning">小学助教</el-tag>
         <el-tag class="ml-2" type="danger">装卸/搬运</el-tag>
-        <el-tag class="ml-2" type="user-info" @click="toUser">...</el-tag>
+        <el-tag class="ml-2" type="user-info">...</el-tag>
       </div>
     </div>
 
-    <div class="user-page clearfloat" v-else>
-      <div class="user-box clearfloat">
-        <div class="user-header"><img :src="kuluomi" /></div>
-        <div class="user-info">
-          <div class="user-local">花开富贵 <span>•青岛</span></div>
-          <div class="user-contact">v:13884635775</div>
-        </div>
-        <div class="user-more">
-          <el-icon><MoreFilled /></el-icon>
-        </div>
-      </div>
-      <div class="user-tag">
-        <el-tag
-          v-for="tag in dynamicTags"
-          :key="tag"
-          class="mx-1"
-          closable
-          :disable-transitions="false"
-          @close="handleClose(tag)"
-        >
-          {{ tag }}
-        </el-tag>
-        <el-input
-          v-if="inputVisible"
-          ref="InputRef"
-          v-model="inputValue"
-          class="ml-1 w-20"
-          size="small"
-          @keyup.enter="handleInputConfirm"
-          @blur="handleInputConfirm"
-        />
-        <el-button
-          v-else
-          class="button-new-tag ml-1"
-          size="small"
-          @click="showInput"
-        >
-          + New Tag
-        </el-button>
-      </div>
-      <el-divider />
-    </div>
+ 
   </div>
 </template>
 
@@ -74,16 +33,10 @@ import { User, MoreFilled } from "@element-plus/icons-vue";
 import { ElInput } from "element-plus";
 
 import { Search } from "@element-plus/icons-vue";
-import WechatIMG from "../../assets/image/WechatIMG.png";
+import cat from "../../assets/image/cat.png";
 import kuluomi from "../../assets/image/kuluomi.png";
 
 const input1 = ref("");
-const showUser = ref<boolean>(true);
-const toUser = () => {
-  showUser.value = !showUser;
-};
-
-
 
 const inputValue = ref("");
 // 更改默认user界面标签
@@ -150,7 +103,6 @@ const handleInputConfirm = () => {
     }
     .page-input {
       height: 50px;
-      margin-top: -30px;
       :deep(.el-input__wrapper) {
         border-radius: 30px !important;
       }
@@ -161,56 +113,6 @@ const handleInputConfirm = () => {
     padding: 20px 0px;
     display: flex;
     justify-content: space-between;
-  }
-}
-.user-page {
-  .user-box {
-    padding-top: 50px;
-
-    .user-header {
-      width: 60px;
-      display: flex;
-      float: left;
-      border: 1px solid gray;
-      border-radius: 18px;
-
-      img {
-        width: 100%;
-        border-radius: 18px;
-        height: 100%;
-        object-fit: contain;
-      }
-    }
-    .user-info {
-      float: left;
-      margin-top: 10px;
-      margin-left: 20px;
-      .user-local {
-        font-size: 16px;
-
-        span {
-          font-size: 12px;
-          color: gray;
-        }
-      }
-      .user-contact {
-        margin-top: 10px;
-        font-size: 16px;
-      }
-    }
-    .user-more {
-      float: right;
-      margin-top: 15px;
-    }
-  }
-  .user-tag {
-    // padding: 20px 30px;
-    margin-top: 18px;
-    display: flex;
-    justify-content: space-between;
-  }
-  :deep(.el-divider--horizontal) {
-    margin: 15px 0;
   }
 }
 </style>

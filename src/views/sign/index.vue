@@ -8,10 +8,9 @@
         </template>
       </el-page-header>
     </div> -->
-    <div class="sign-logo"><img :src="WechatIMG" /></div>
+    <div class="sign-logo"><img :src="cat" /></div>
 
     <div class="sign-content">
-      <div class="sign-title">创建账户</div>
       <div class="sign-input">
         <div class="input">
           <el-input v-model="username" placeholder="用户名" />
@@ -35,7 +34,7 @@
       </div>
       <div class="sign-with">
         <el-divider>
-          <span>已有账号 登陆</span>
+          <span>已有账号 <a href="login" style="text-decoration: none;color: #000;">登陆</a></span>
         </el-divider>
       </div>
       <div class="sign-way">
@@ -50,7 +49,7 @@
 <script setup lang="ts">
 import { ref, reactive } from "vue";
 import { Iphone, ChromeFilled, Eleme } from "@element-plus/icons-vue";
-import WechatIMG from "../../assets/image/WechatIMG.png";
+import cat from "../../assets/image/cat.png";
 import router from "../../router";
 
 const input = ref("");
@@ -67,6 +66,15 @@ const goBack = () => {
   max-width: 768px;
   max-height: 869px;
   margin: auto;
+  .sign-logo{
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+  
+  }
   .sign-content {
     text-align: center;
     margin-top: -20px;

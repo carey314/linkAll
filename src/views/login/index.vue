@@ -8,10 +8,9 @@
         </template>
       </el-page-header>
     </div> -->
-    <div class="login-logo"><img :src="WechatIMG" /></div>
+    <div class="login-logo"><img :src="cat" /></div>
 
     <div class="login-content">
-      <div class="login-title">欢迎您的加入～</div>
       <div class="login-input">
         <div class="input">
           <el-input v-model="input" placeholder="账号" />
@@ -42,7 +41,7 @@
 <script setup lang="ts">
 import { ref, reactive } from "vue";
 import { Iphone, ChromeFilled, Eleme } from "@element-plus/icons-vue";
-import WechatIMG from "../../assets/image/WechatIMG.png";
+import cat from "../../assets/image/cat.png";
 import router from "../../router";
 
 const input = ref("");
@@ -58,6 +57,13 @@ const goBack = () => {
   max-width: 768px; 
   max-height: 869px;
   margin: auto;
+  .login-logo{
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+  }
   .login-content {
     text-align: center;
     margin-top: -20px;
