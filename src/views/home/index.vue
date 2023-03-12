@@ -186,7 +186,7 @@ const handleInputConfirm = () => {
       margin-top: 10px;
       margin-left: 20px;
       .user-local {
-        font-size: 20px;
+        font-size: 16px;
 
         span {
           font-size: 12px;
