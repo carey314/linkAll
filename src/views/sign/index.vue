@@ -1,40 +1,41 @@
 <template>
   <div class="sign-page">
-    <div>
+    <!-- nav  -->
+    <!-- <div>
       <el-page-header @back="goBack">
         <template #content>
           <span class="text-large font-600 mr-3"> Sign up </span>
         </template>
       </el-page-header>
-    </div>
+    </div> -->
     <div class="sign-logo"><img :src="WechatIMG" /></div>
 
     <div class="sign-content">
-      <div class="sign-title">Create Account</div>
+      <div class="sign-title">创建账户</div>
       <div class="sign-input">
-        <div class="username">
-          <el-input v-model="input" placeholder="User name" />
+        <div class="input">
+          <el-input v-model="username" placeholder="用户名" />
         </div>
         <div class="input">
-          <el-input v-model="input" placeholder="Account ID" />
+          <el-input v-model="input" placeholder="账号" />
         </div>
         <div class="input">
           <el-input
             v-model="inputPassword"
             class="w-50 m-2"
-            placeholder="Password"
+            placeholder="密码"
             show-password
           />
         </div>
         <div class="sign-btn">
           <router-link to="login" style="text-decoration: none"
-            ><el-button>Sign Up</el-button></router-link
+            ><el-button>注册</el-button></router-link
           >
         </div>
       </div>
       <div class="sign-with">
         <el-divider>
-          <span>or Login with</span>
+          <span>已有账号 登陆</span>
         </el-divider>
       </div>
       <div class="sign-way">
@@ -75,12 +76,20 @@ const goBack = () => {
     }
   }
   .sign-input {
+    margin-top: 10px;
     .input {
       margin-top: 10px;
     }
     :deep(.el-input) {
       height: 48px;
     }
+  }
+  .sign-with {
+    span{
+      font-size: 12px;
+      color:#606266;
+    }
+ 
   }
   .sign-login {
     margin-top: 15px;

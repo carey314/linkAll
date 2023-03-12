@@ -4,16 +4,16 @@
       <img :src="WechatIMG" />
     </div>
     <div class="content">
-      <div class="content-title">Join allLink...</div>
+      <div class="content-title">开始使用👇🏻</div>
       <div class="content-btn">
         <div class="content-sign btn">
           <router-link to="sign" style="text-decoration: none"
-            ><el-button>Sign Up</el-button></router-link
+            ><el-button>注册</el-button></router-link
           >
         </div>
         <div class="content-login btn">
           <router-link to="login" style="text-decoration: none"
-            ><el-button>Log In</el-button></router-link
+            ><el-button>登陆</el-button></router-link
           >
         </div>
       </div>

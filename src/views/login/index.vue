@@ -1,31 +1,32 @@
 <template>
   <div class="login-page">
-    <div>
+    <!-- nav  -->
+    <!-- <div>
       <el-page-header @back="goBack">
         <template #content>
           <span class="text-large font-600 mr-3"> Log in </span>
         </template>
       </el-page-header>
-    </div>
+    </div> -->
     <div class="login-logo"><img :src="WechatIMG" /></div>
 
     <div class="login-content">
-      <div class="login-title">Welcome to join us</div>
+      <div class="login-title">欢迎您的加入～</div>
       <div class="login-input">
         <div class="input">
-          <el-input v-model="input" placeholder="Account ID" />
+          <el-input v-model="input" placeholder="账号" />
         </div>
         <div class="input">
           <el-input
             v-model="inputPassword"
             class="w-50 m-2"
-            placeholder="Password"
+            placeholder="密码"
             show-password
           />
         </div>
         <div class="login-btn">
           <router-link to="home" style="text-decoration: none"
-            ><el-button>Log in</el-button></router-link
+            ><el-button>登陆</el-button></router-link
           >
         </div>
       </div>
@@ -54,7 +55,7 @@ const goBack = () => {
 <style scoped lang="scss">
 .login-page {
   padding: 10px 30px;
-  max-width: 768px;
+  max-width: 768px; 
   max-height: 869px;
   margin: auto;
   .login-content {
